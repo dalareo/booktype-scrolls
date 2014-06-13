@@ -330,7 +330,7 @@ if __name__ == '__main__':
         sys.exit(1)
 
     if platform in ['debian', 'ubuntu']:
-        command = '. %s/bin/activate && pip install Django==1.3 South==0.7.5 unidecode lxml PIL' % projectDir
+        command = '. %s/bin/activate && pip install Django==1.3 South==0.7.5 unidecode lxml Pillow' % projectDir
     elif platform in ['osx']:
         p = subprocess.Popen('find /usr/local/ -name xml2-config', shell=True, 
                              stdout=subprocess.PIPE, stderr=subprocess.PIPE, close_fds=True)
@@ -355,7 +355,7 @@ if __name__ == '__main__':
             sys.exit(1)
         
 
-    command = 'cd %s && git clone https://github.com/sourcefabric/Booktype.git' % projectDir
+    command = 'cd %s && git clone https://github.com/aerkalov/Booktype.git' % projectDir
     print fmt('\n$ ' + command +'\n', 'blue')
     ret = subprocess.call(command, shell=True)
     if ret != 0:
